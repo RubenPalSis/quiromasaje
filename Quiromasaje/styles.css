@@ -236,6 +236,41 @@ p{margin:0 0 1rem}
 .contact-map iframe{width:100%;height:440px;border:0;filter:grayscale(.35);transition:filter .4s ease}
 .contact-map:hover iframe{filter:grayscale(0)}
 
+/* ---------- Páginas legales ---------- */
+.page-legal{padding-top:var(--header-h)}
+.page-legal .site-header{background:rgba(250,248,244,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+
+.legal-hero{background:var(--white);border-bottom:1px solid var(--line);padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(2rem,4vw,3rem)}
+.legal-hero h1{font-size:clamp(2.2rem,5vw,3.4rem)}
+.breadcrumb{font-size:.82rem;letter-spacing:.06em;color:var(--sage);margin-bottom:1rem}
+.breadcrumb a{color:var(--olive-dark);transition:opacity .25s ease}
+.breadcrumb a:hover{opacity:.7}
+.breadcrumb span[aria-hidden]{margin:0 .4rem}
+
+.legal-body{max-width:74ch;color:var(--ink-soft)}
+.legal-body h2{
+  font-size:clamp(1.35rem,2.2vw,1.75rem);color:var(--ink);
+  margin:3rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--line);
+}
+.legal-body > h2:first-child{margin-top:0;padding-top:0;border-top:0}
+.legal-body h3{font-size:1.15rem;color:var(--ink);margin:2rem 0 .8rem}
+.legal-body p{font-size:.98rem}
+.legal-body strong,.legal-body b{color:var(--ink);font-weight:500}
+.legal-body a{color:var(--olive-dark);border-bottom:1px solid rgba(106,136,64,.35);transition:border-color .25s ease}
+.legal-body a:hover{border-bottom-color:var(--olive-dark)}
+.legal-body ul,.legal-body ol{margin:0 0 1.4rem;padding-left:1.3rem}
+.legal-body ul li{list-style:disc}
+.legal-body ol li{list-style:decimal}
+.legal-body li{margin-bottom:.5rem;font-size:.98rem}
+.legal-body blockquote{
+  margin:1.8rem 0;padding:1.2rem 1.5rem;background:var(--white);
+  border-left:3px solid var(--olive);border-radius:0 var(--radius) var(--radius) 0;
+}
+.legal-body blockquote p:last-child{margin-bottom:0}
+.legal-body table{width:100%;border-collapse:collapse;margin:1.6rem 0;font-size:.92rem}
+.legal-body th,.legal-body td{border:1px solid var(--line);padding:.7rem .9rem;text-align:left}
+.legal-body th{background:var(--sage-soft);color:var(--ink);font-weight:500}
+
 /* ---------- Pie ---------- */
 .site-footer{background:var(--ink);color:rgba(255,255,255,.7);padding:3.5rem 0 2.5rem;font-size:.9rem}
 .footer-inner{display:grid;gap:1.6rem;justify-items:center;text-align:center}
@@ -245,15 +280,6 @@ p{margin:0 0 1rem}
 .footer-links a{transition:color .25s ease}
 .footer-links a:hover{color:#fff}
 .footer-copy{margin:0;font-size:.8rem;color:rgba(255,255,255,.45)}
-
-/* ---------- WhatsApp flotante ---------- */
-.fab{
-  position:fixed;right:20px;bottom:20px;z-index:90;width:56px;height:56px;border-radius:50%;
-  background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(37,211,102,.4);
-  transition:transform .3s ease;
-}
-.fab:hover{transform:scale(1.08)}
-.fab svg{width:30px;height:30px;fill:#fff}
 
 /* ---------- Aviso de cookies ---------- */
 .cookie{
@@ -309,8 +335,6 @@ p{margin:0 0 1rem}
   .card-body{padding:1.4rem}
   .cookie{flex-direction:column;align-items:stretch;text-align:left}
   .cookie-actions .btn{flex:1}
-  .fab{width:50px;height:50px;right:14px;bottom:14px}
-  .fab svg{width:26px;height:26px}
 }
 
 @media (prefers-reduced-motion:reduce){

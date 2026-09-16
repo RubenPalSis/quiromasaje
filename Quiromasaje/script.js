@@ -30,9 +30,12 @@
     }
   });
 
-  /* --- Cabecera compacta al hacer scroll --- */
+  /* --- Cabecera compacta al hacer scroll ---
+     En las páginas legales no hay hero oscuro detrás, así que la cabecera
+     se queda siempre en su versión clara. */
+  var esLegal = document.body.classList.contains('page-legal');
   var onScroll = function () {
-    header.classList.toggle('scrolled', window.scrollY > 40);
+    header.classList.toggle('scrolled', esLegal || window.scrollY > 40);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
