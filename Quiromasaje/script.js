@@ -5,6 +5,7 @@
   var header = document.getElementById('header');
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('navToggle');
+  var overlay = document.getElementById('navOverlay');
 
   /* --- Menú móvil --- */
   function closeNav() {
@@ -23,12 +24,21 @@
     if (e.target.closest('a')) closeNav();
   });
 
+  if (overlay) overlay.addEventListener('click', closeNav);
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && document.body.classList.contains('nav-open')) {
       closeNav();
       toggle.focus();
     }
   });
+
+  /* Al pasar a escritorio el panel deja de existir: si quedó abierto,
+     el body se quedaba bloqueado sin poder hacer scroll. */
+  var ancho = window.matchMedia('(min-width: 861px)');
+  var alCambiarAncho = function (e) { if (e.matches) closeNav(); };
+  if (ancho.addEventListener) ancho.addEventListener('change', alCambiarAncho);
+  else if (ancho.addListener) ancho.addListener(alCambiarAncho);
 
   /* --- Cabecera compacta al hacer scroll ---
      En las páginas legales no hay hero oscuro detrás, así que la cabecera
